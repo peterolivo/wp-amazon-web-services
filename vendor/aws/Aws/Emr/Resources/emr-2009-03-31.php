@@ -265,10 +265,12 @@ return array (
                     'default' => 'ElasticMapReduce.AddTags',
                 ),
                 'ResourceId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
                 'Tags' => array(
+                    'required' => true,
                     'type' => 'array',
                     'location' => 'json',
                     'items' => array(
@@ -318,6 +320,7 @@ return array (
                     'default' => 'ElasticMapReduce.DescribeCluster',
                 ),
                 'ClusterId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
@@ -419,10 +422,12 @@ return array (
                     'default' => 'ElasticMapReduce.DescribeStep',
                 ),
                 'ClusterId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
                 'StepId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
@@ -460,6 +465,7 @@ return array (
                     'default' => 'ElasticMapReduce.ListBootstrapActions',
                 ),
                 'ClusterId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
@@ -564,6 +570,7 @@ return array (
                     'default' => 'ElasticMapReduce.ListInstanceGroups',
                 ),
                 'ClusterId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
@@ -605,6 +612,7 @@ return array (
                     'default' => 'ElasticMapReduce.ListInstances',
                 ),
                 'ClusterId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
@@ -658,6 +666,7 @@ return array (
                     'default' => 'ElasticMapReduce.ListSteps',
                 ),
                 'ClusterId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
@@ -667,6 +676,15 @@ return array (
                     'items' => array(
                         'name' => 'StepState',
                         'type' => 'string',
+                    ),
+                ),
+                'StepIds' => array(
+                    'type' => 'array',
+                    'location' => 'json',
+                    'items' => array(
+                        'name' => 'XmlString',
+                        'type' => 'string',
+                        'maxLength' => 10280,
                     ),
                 ),
                 'Marker' => array(
@@ -761,10 +779,12 @@ return array (
                     'default' => 'ElasticMapReduce.RemoveTags',
                 ),
                 'ResourceId' => array(
+                    'required' => true,
                     'type' => 'string',
                     'location' => 'json',
                 ),
                 'TagKeys' => array(
+                    'required' => true,
                     'type' => 'array',
                     'location' => 'json',
                     'items' => array(
@@ -1039,6 +1059,11 @@ return array (
                     'location' => 'json',
                 ),
                 'JobFlowRole' => array(
+                    'type' => 'string',
+                    'location' => 'json',
+                    'maxLength' => 10280,
+                ),
+                'ServiceRole' => array(
                     'type' => 'string',
                     'location' => 'json',
                     'maxLength' => 10280,
@@ -1359,6 +1384,15 @@ return array (
                                 ),
                             ),
                         ),
+                        'ServiceRole' => array(
+                            'type' => 'string',
+                        ),
+                        'NormalizedInstanceHours' => array(
+                            'type' => 'numeric',
+                        ),
+                        'MasterPublicDnsName' => array(
+                            'type' => 'string',
+                        ),
                     ),
                 ),
             ),
@@ -1624,6 +1658,9 @@ return array (
                             'JobFlowRole' => array(
                                 'type' => 'string',
                             ),
+                            'ServiceRole' => array(
+                                'type' => 'string',
+                            ),
                         ),
                     ),
                 ),
@@ -1789,6 +1826,9 @@ return array (
                                         ),
                                     ),
                                 ),
+                            ),
+                            'NormalizedInstanceHours' => array(
+                                'type' => 'numeric',
                             ),
                         ),
                     ),
@@ -1962,6 +2002,33 @@ return array (
                                 'type' => 'string',
                             ),
                             'Name' => array(
+                                'type' => 'string',
+                            ),
+                            'Config' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'Jar' => array(
+                                        'type' => 'string',
+                                    ),
+                                    'Properties' => array(
+                                        'type' => 'object',
+                                        'additionalProperties' => array(
+                                            'type' => 'string',
+                                        ),
+                                    ),
+                                    'MainClass' => array(
+                                        'type' => 'string',
+                                    ),
+                                    'Args' => array(
+                                        'type' => 'array',
+                                        'items' => array(
+                                            'name' => 'String',
+                                            'type' => 'string',
+                                        ),
+                                    ),
+                                ),
+                            ),
+                            'ActionOnFailure' => array(
                                 'type' => 'string',
                             ),
                             'Status' => array(

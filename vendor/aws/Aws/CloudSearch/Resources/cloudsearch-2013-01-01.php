@@ -196,6 +196,9 @@ return array (
                                 'StemmingDictionary' => array(
                                     'type' => 'string',
                                 ),
+                                'JapaneseTokenizationDictionary' => array(
+                                    'type' => 'string',
+                                ),
                                 'AlgorithmicStemming' => array(
                                     'type' => 'string',
                                 ),
@@ -1001,7 +1004,7 @@ return array (
                     'location' => 'aws.query',
                     'sentAs' => 'AnalysisSchemeNames.member',
                     'items' => array(
-                        'name' => 'FieldName',
+                        'name' => 'StandardName',
                         'type' => 'string',
                         'minLength' => 1,
                         'maxLength' => 64,
@@ -1154,7 +1157,7 @@ return array (
                     'location' => 'aws.query',
                     'sentAs' => 'ExpressionNames.member',
                     'items' => array(
-                        'name' => 'FieldName',
+                        'name' => 'StandardName',
                         'type' => 'string',
                         'minLength' => 1,
                         'maxLength' => 64,
@@ -1210,7 +1213,7 @@ return array (
                     'location' => 'aws.query',
                     'sentAs' => 'FieldNames.member',
                     'items' => array(
-                        'name' => 'FieldName',
+                        'name' => 'DynamicFieldName',
                         'type' => 'string',
                         'minLength' => 1,
                         'maxLength' => 64,
@@ -1351,7 +1354,7 @@ return array (
                     'location' => 'aws.query',
                     'sentAs' => 'SuggesterNames.member',
                     'items' => array(
-                        'name' => 'FieldName',
+                        'name' => 'StandardName',
                         'type' => 'string',
                         'minLength' => 1,
                         'maxLength' => 64,
@@ -1536,6 +1539,9 @@ return array (
                         'DesiredReplicationCount' => array(
                             'type' => 'numeric',
                         ),
+                        'DesiredPartitionCount' => array(
+                            'type' => 'numeric',
+                        ),
                     ),
                 ),
             ),
@@ -1686,6 +1692,17 @@ return array (
                         'SearchInstanceCount' => array(
                             'type' => 'numeric',
                         ),
+                        'Limits' => array(
+                            'type' => 'object',
+                            'properties' => array(
+                                'MaximumReplicationCount' => array(
+                                    'type' => 'numeric',
+                                ),
+                                'MaximumPartitionCount' => array(
+                                    'type' => 'numeric',
+                                ),
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -1717,6 +1734,9 @@ return array (
                                             'type' => 'string',
                                         ),
                                         'StemmingDictionary' => array(
+                                            'type' => 'string',
+                                        ),
+                                        'JapaneseTokenizationDictionary' => array(
                                             'type' => 'string',
                                         ),
                                         'AlgorithmicStemming' => array(
@@ -2157,6 +2177,9 @@ return array (
                                         'StemmingDictionary' => array(
                                             'type' => 'string',
                                         ),
+                                        'JapaneseTokenizationDictionary' => array(
+                                            'type' => 'string',
+                                        ),
                                         'AlgorithmicStemming' => array(
                                             'type' => 'string',
                                         ),
@@ -2241,6 +2264,17 @@ return array (
                         ),
                         'SearchInstanceCount' => array(
                             'type' => 'numeric',
+                        ),
+                        'Limits' => array(
+                            'type' => 'object',
+                            'properties' => array(
+                                'MaximumReplicationCount' => array(
+                                    'type' => 'numeric',
+                                ),
+                                'MaximumPartitionCount' => array(
+                                    'type' => 'numeric',
+                                ),
+                            ),
                         ),
                     ),
                 ),
@@ -2657,6 +2691,9 @@ return array (
                                             'StemmingDictionary' => array(
                                                 'type' => 'string',
                                             ),
+                                            'JapaneseTokenizationDictionary' => array(
+                                                'type' => 'string',
+                                            ),
                                             'AlgorithmicStemming' => array(
                                                 'type' => 'string',
                                             ),
@@ -2781,6 +2818,17 @@ return array (
                             ),
                             'SearchInstanceCount' => array(
                                 'type' => 'numeric',
+                            ),
+                            'Limits' => array(
+                                'type' => 'object',
+                                'properties' => array(
+                                    'MaximumReplicationCount' => array(
+                                        'type' => 'numeric',
+                                    ),
+                                    'MaximumPartitionCount' => array(
+                                        'type' => 'numeric',
+                                    ),
+                                ),
                             ),
                         ),
                     ),
@@ -3138,6 +3186,9 @@ return array (
                                 'DesiredReplicationCount' => array(
                                     'type' => 'numeric',
                                 ),
+                                'DesiredPartitionCount' => array(
+                                    'type' => 'numeric',
+                                ),
                             ),
                         ),
                         'Status' => array(
@@ -3359,6 +3410,9 @@ return array (
                                     'type' => 'string',
                                 ),
                                 'DesiredReplicationCount' => array(
+                                    'type' => 'numeric',
+                                ),
+                                'DesiredPartitionCount' => array(
                                     'type' => 'numeric',
                                 ),
                             ),
